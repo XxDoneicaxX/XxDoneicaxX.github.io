@@ -234,14 +234,23 @@
   .d-hero { padding-top: 64px; }
   .d-hero .ed { max-width: 520px; }
   .d-close {
-    position: absolute; top: 14px; left: 14px; z-index: 3; width: 40px; height: 40px; border-radius: 50%;
-    border: 0; background: #FFFFFF; color: #3A2150; font: 700 20px var(--body); cursor: pointer;
+    position: absolute; top: 14px; left: 14px; z-index: 3; width: 30px; height: 30px; border-radius: 50%;
+    border: 0; background: rgba(255, 255, 255, .7); color: #3A2150; font: 600 16px/1 var(--body); cursor: pointer; opacity: .8;
   }
+  .d-close:hover, .d-close:focus-visible { opacity: 1; background: #FFFFFF; }
   .d-body { padding: clamp(22px, 4vw, 36px); display: grid; gap: 22px; }
   .d-body h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(40px, 7vw, 64px); line-height: .95; margin: 0; }
   .d-body .kind { font: 700 12.5px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--hot); margin: 0 0 6px; }
   .d-body p.intro { font-size: 18px; font-weight: 600; margin: 0; max-width: 62ch; }
   .d-body ul.pts { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-width: 70ch; }
+  @media (max-width: 620px) {
+    .d-hero { min-height: 220px; padding: 52px 16px 20px; }
+    .d-body { gap: 16px; font-size: 14.5px; line-height: 1.5; }
+    .d-body p.intro { font-size: 15.5px; }
+    .d-body ul.pts { gap: 4px; padding-left: 18px; }
+    .d-body h3 { font-size: 38px; }
+    .gallery figcaption { font-size: 13px; }
+  }
   .d-links { display: flex; gap: 10px; flex-wrap: wrap; }
   .d-links a {
     font: 700 13px var(--mono); text-decoration: none; padding: 10px 18px; border-radius: 999px;
@@ -398,8 +407,8 @@
     <div class="bento">
       <div class="tile t-hey">
         <h3>Hey there!</h3>
-        <p>I'm <b>Doneica Aaron</b>, a computer science student at <b>NJIT</b>. I'm also wrapping up my A.S. at Essex County College this December, and I earned a B.S. in IT back home at the University of Guyana.</p>
-        <p>I love coding, and my favorite projects start with noticing a real problem. During my internship at <b>Tech Titans</b>, students kept losing their work and struggling with Jupyter on their Chromebooks. So I built <b>Codelab</b>, showed it to the program's CEO, and deployed it to all 10 classrooms. Then I built <b>BIT</b>, an AI assistant, as part of a challenge the program gave its instructors.</p>
+        <p>I'm <b>Doneica Aaron</b>, a computer science student at <b>NJIT</b> with a background in information technology. I like finding problems, figuring out why they exist, and building practical solutions.</p>
+        <p>During my internship at <b>Tech Titans</b>, students kept losing their work and struggling with Jupyter on their Chromebooks. So I built <b>Codelab</b>, showed it to the program's CEO, and deployed it to all 10 classrooms. Then I built <b>BIT</b>, an AI assistant, as part of a challenge the program gave its instructors.</p>
       </div>
 
       <div class="tile t-stats" aria-label="Highlights">
@@ -493,10 +502,10 @@
           <h3>BIT</h3>
           <ul class="pts">
             <li><b>The challenge:</b> instructors at Tech Titans were tasked with building an AI helper for beginner programmers.</li>
-            <li><b>The build:</b> a locally hosted Gemma model on Ollama with custom rules that give guided hints instead of finished assignments.</li>
+            <li><b>The build:</b> a locally hosted Gemma 4 E4B model on Ollama with custom rules that give guided hints instead of finished assignments.</li>
             <li>Runs locally, so no logins and no outside AI usage limits.</li>
           </ul>
-          <ul class="chips"><li>React</li><li>FastAPI</li><li>Ollama</li><li>Gemma</li><li>AWS</li></ul>
+          <ul class="chips"><li>React</li><li>FastAPI</li><li>Ollama</li><li>Gemma 4 E4B</li><li>AWS</li></ul>
           <button class="open-btn" type="button">View project →</button>
         </div>
       </article>
@@ -541,10 +550,10 @@
         <p>Built and deployed Codelab and BIT, two tools designed for beginner programmers on Chromebooks. I supported students and instructors with programming and troubleshooting, and analyzed attendance and operational data to find participation trends, tracking issues and ways to improve retention.</p>
       </article>
       <article class="job now">
-        <span class="role">Receptionist (and the unofficial IT desk)</span>
+        <span class="role">Receptionist</span>
         <span class="when">Jul 2022 – now</span>
         <span class="org">CareOne Assisted Living</span>
-        <p>I troubleshoot hardware, software, printer and workstation issues for staff and walk non-technical coworkers through fixes step by step. I also build and maintain Excel tracking systems and run monthly reception schedules, documentation, visitor communication and front-desk operations.</p>
+        <p>Manage front-desk operations, visitor and resident communication, incoming calls, documentation and day-to-day reception needs. Create monthly reception schedules and keep administrative records organized in Excel and internal systems.</p>
       </article>
       <article class="job now">
         <span class="role">Program / Event Chair</span>
@@ -634,10 +643,10 @@
       ]
     },
     bit: {
-      intro: 'Built for an instructor challenge at Tech Titans: an AI assistant running on a local Gemma model, with rules that make it guide students toward answers instead of handing them over.',
+      intro: 'Built for an instructor challenge at Tech Titans: an AI assistant running on Gemma 4 E4B locally, with rules that make it guide students toward answers instead of handing them over.',
       links: [{ label: 'View code on GitHub', url: 'https://github.com/XxDoneicaxX/bit-ai' }],
       shots: [
-        { src: 'shots/bit-2-chat.webp', caption: 'Asked to "just fix it," BIT guides the student with a question instead of handing over the answer. (Live reply from the local Gemma model.)' },
+        { src: 'shots/bit-2-chat.webp', caption: 'Asked to "just fix it," BIT guides the student with a question instead of handing over the answer. (Live reply from Gemma 4 E4B running locally.)' },
         { src: 'shots/bit-1-home.webp', caption: 'BIT’s welcome screen.' }
       ]
     },
